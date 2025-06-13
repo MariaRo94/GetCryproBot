@@ -14,6 +14,17 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+//todo добавить логирование slf4j
+//todo связать кнопки и основное меню
+//todo добавить получение курса Соланы
+//todo добавить получение курса Этериума
+//todo добавить обработку исключений в случае если нет связи с апишкой\
+//todo добавить юнит тесты
+//todo развернуть в докере
+//todo сделать сборки попробовать
+//todo подумать что можно ще добавить из функционала с криптой
+
+
 @Slf4j
 public class GetCryptoCurrencyRateBot extends TelegramLongPollingBot {
 
@@ -23,6 +34,7 @@ public class GetCryptoCurrencyRateBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
+
         return BOT_USERNAME;
     }
 
@@ -67,11 +79,10 @@ public class GetCryptoCurrencyRateBot extends TelegramLongPollingBot {
             double price = rootNode.path("bitcoin").path("usd").asDouble();
             return String.format("%.2f USD", price);
 
-        }
-       catch (IOException | InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException("Ошибка при получении курса Биткоина: " + e.getMessage(), e);
         }
-}
+    }
 
 
     private void sendMessage(long chatId, String text) {
@@ -91,3 +102,5 @@ public class GetCryptoCurrencyRateBot extends TelegramLongPollingBot {
         return BOT_TOKEN;
     }
 }
+
+
