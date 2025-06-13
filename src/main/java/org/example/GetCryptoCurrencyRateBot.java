@@ -30,7 +30,7 @@ public class GetCryptoCurrencyRateBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
-            long chatId = update.getChatMember().getChat().getId();
+            long chatId = update.getMessage().getChatId();
 
             if ("start".equals(messageText)) {
                 sendMessage(chatId, "Привет! Я твой бот-помощник для торговли криптовалютой! Дай мне команды" +
