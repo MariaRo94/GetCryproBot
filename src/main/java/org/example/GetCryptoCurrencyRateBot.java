@@ -44,10 +44,10 @@ public class GetCryptoCurrencyRateBot extends TelegramLongPollingBot {
          *
          * @implSpec Метод обрабатывает только текстовые сообщения (игнорирует стикеры, голосовые и др.).
          *           Для корректной работы требуется:
-         *             <li>Подключенная библиотека telegrambots</li>
-         *             <li>Реализованный метод {@code sendMessage}</li>
-         *             <li>Доступ к API для получения курса Биткоина</li>
-         *           </ul>
+         *             Подключенная библиотека telegrambots</li>
+         *             Реализованный метод {@code sendMessage}</li>
+         *             Доступ к API для получения курса Биткоина</li>
+         *
          *
          * @see #sendMessage(long, String) Метод для отправки сообщений
          * @see Update Класс входящего обновления
