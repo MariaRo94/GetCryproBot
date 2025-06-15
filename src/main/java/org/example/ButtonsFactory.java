@@ -20,11 +20,10 @@ public class ButtonsFactory {
 
         KeyboardRow row1 = new KeyboardRow();
         row1.add("💰 Узнать курс BTC");  // Текст кнопки
-        row1.add("📊 Другие курсы");
+        row1.add("💰 Узнать курс SOL");
 
         KeyboardRow row2 = new KeyboardRow();
         row2.add("ℹ️ Помощь");
-        row2.add("🔄 Главное меню");
 
         keyboard.add(row1);
         keyboard.add(row2);
